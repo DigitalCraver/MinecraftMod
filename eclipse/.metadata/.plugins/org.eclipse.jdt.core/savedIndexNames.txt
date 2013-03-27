@@ -1,0 +1,12 @@
+INDEX VERSION 1.126+F:\Minecraft\GitHub\MinecraftMod\eclipse\.metadata\.plugins\org.eclipse.jdt.core
+2278688666.index
+163172794.index
+1299022128.index
+4214182936.index
+4155206848.index
+1995173708.index
+1498219845.index
+3484492120.index
+2885049050.index
+4108727661.index
+305854171.index
