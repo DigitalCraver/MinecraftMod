@@ -1,9 +1,8 @@
 package victor.victorianCurrency;
 
-import victor.victorianCurrency.blocks.Block_bank;
+
+import victor.victorianCurrency.blocks.Block_Piggy;
 import victor.victorianCurrency.blocks.Block_shop;
-import victor.victorianCurrency.blocks.InventoryBlockBank;
-import victor.victorianCurrency.blocks.TileEntityBank;
 import victor.victorianCurrency.items.Item_coin;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -43,14 +42,12 @@ public class VictorianCurrency {
          * ex: 32 copper coin to make a silver coin, 32 silver coin to make a gold coin
          */
         private static final int TIER_MODIFIER = 32;
-        
-        public static NBTTagCompound bankList = new NBTTagCompound("bankData");
-        
+         
         private final static Item coin_bronze = new Item_coin(256, "Victorian Coin", CreativeTabs.tabMisc,BASIC_COIN_VALUE).setUnlocalizedName("coin_bronze");
         private final static Item coin_silver = new Item_coin(257, "Victorian Coin", CreativeTabs.tabMisc,BASIC_COIN_VALUE * TIER_MODIFIER).setUnlocalizedName("coin_silver");
         private final static Item coin_gold = new Item_coin(258, "Victorian Coin", CreativeTabs.tabMisc, ((Item_coin) coin_silver).getValue() * TIER_MODIFIER).setUnlocalizedName("coin_gold");
         private final static Block shop = new Block_shop(556,Material.wood, CreativeTabs.tabBlock).setHardness(0.5f).setLightValue(0.5f).setUnlocalizedName("shop");
-        public final static Block bank = new Block_bank(557,Material.iron).setHardness(1.5f).setUnlocalizedName("shop");
+        private final static Block piggy = new Block_Piggy();
         
         
         // Says where the client and server 'proxy' code is loaded.
@@ -68,13 +65,12 @@ public class VictorianCurrency {
         	LanguageRegistry.addName(coin_silver, "Silver Victorian");
         	LanguageRegistry.addName(coin_gold, "Gold Victorian");
         	LanguageRegistry.addName(shop, "Coin shop");
-        	LanguageRegistry.addName(bank, "piggy bank");
-        	
-        	GameRegistry.registerTileEntity(TileEntityBank.class, "Bank");
+        	LanguageRegistry.addName(piggy, "Piggy Bank");
+
         	GameRegistry.registerBlock(shop);
-        	GameRegistry.registerBlock(bank);
+        	GameRegistry.registerBlock(piggy);
         	
-        	
+             	
         	
                 //proxy.registerRenderers();
         }
